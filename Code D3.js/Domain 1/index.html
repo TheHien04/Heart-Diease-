@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="task1.css" />
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <title>Heart Disease Prevalence by Age Group</title>
+</head>
+<body>
+  <h1 class="title">Heart Disease Prevalence by Age Group</h1>
+
+  <!-- Bộ lọc -->
+  <div style="text-align: center; margin-bottom: 20px;">
+    <label for="statusFilter">Filter by Heart Disease Status: </label>
+    <select id="statusFilter">
+      <option value="All">All</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select>
+  </div>
+
+  <!-- Biểu đồ -->
+  <div id="bar_chart"></div>
+
+  <!-- Tooltip sẽ tự tạo bằng JS -->
+  <script src="task1.js"></script>
+</body>
+</html>
