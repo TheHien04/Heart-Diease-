@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="dashboard.css" />
+  <link rel="stylesheet" href="../Domain 1/task1.css" />
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <title>Heart Disease Dashboard</title>
+</head>
+<body>
+
+  <!-- Sidebar giới thiệu & số liệu tổng hợp -->
+  <aside class="infobar">
+    <div class="ib-brand">
+      <span class="ib-logo">❤</span>
+      <div class="ib-title">Heart Disease<br/>Dashboard</div>
+    </div>
+
+    <p class="ib-desc">
+      Visualizing 8 domains related to heart disease for quick insights.
+    </p>
+
+    <div class="ib-kpis">
+      <div class="kpi">
+        <div class="kpi-label">Total Patients</div>
+        <div class="kpi-value" id="kpi-total">—</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">% Heart Disease</div>
+        <div class="kpi-value" id="kpi-rate">—</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Avg Cholesterol</div>
+        <div class="kpi-value" id="kpi-chol">—</div>
+      </div>
+    </div>
+
+    <div class="ib-footer">
+      <button id="theme-toggle" class="pill-toggle">🌙 Toggle Theme</button>
+      <div class="ib-credit">© Nguyen The Hien</div>
+    </div>
+  </aside>
+
+  <div class="dashboard-container">
+    <div class="charts-container">
+      <a href="../Domain 1/index.html" target="_blank" rel="noopener">
+        <div class="chart" id="chart1">
+          <h3>Heart Disease Prevalence by Age Group</h3>
+        </div>
+      </a>
+
+      <a href="../Domain 2/index.html" target="_blank" rel="noopener">
+        <div class="chart" id="chart2">
+          <h3>Gender vs Heart Disease Prevalence</h3>
+        </div>
+      </a>
+
+      <a href="../Domain 3/index.html" target="_blank" rel="noopener">
+        <div class="chart" id="chart3">
+          <h3>Smoking Status vs Heart Disease Status</h3>
+        </div>
+      </a>
+
+      <a href="../Domain 4/index.html" target="_blank" rel="noopener">
+        <div class="chart" id="chart4">
+          <h3>Exercise Habits vs Heart Disease Status</h3>
+        </div>
+      </a>
+
+      <a href="../Domain 5/index.html" target="_blank" rel="noopener">
+        <div class="chart" id="chart5">
+          <h3>Average Cholesterol Level by Heart Disease Status</h3>
+        </div>
+      </a>
+
+      <a href="../Domain 6/index.html" target="_blank" rel="noopener">
+        <div class="chart" id="chart6">
+          <h3>BMI vs Heart Disease Status</h3>
+        </div>
+      </a>
+
+      <a href="../Domain 7/index.html" target="_blank" rel="noopener">
+        <div class="chart" id="chart7">
+          <h3>Heart disease incidence by family history</h3>
+        </div>
+      </a>
+
+      <a href="../Domain 8/index.html" target="_blank" rel="noopener">
+        <div class="chart" id="chart8">
+          <h3>Cholesterol Level Distribution by Gender</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+  <script src="dashboard.js"></script>
+</body>
+</html>
