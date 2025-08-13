@@ -1,0 +1,59 @@
+.title {
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 24px;
+  margin: 20px 0;
+  color: #333;
+}
+
+.charts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.chart-container {
+  text-align: center;
+}
+
+h2 {
+  margin: 10px 0;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 18px;
+  color: #444;
+}
+
+.pie_chart-container {
+  display: block;
+  margin: 0 auto;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: bold;
+  fill: black;
+}
+
+.legend-container {
+  font-family: Arial, sans-serif;
+  display: block;
+  margin: 0 auto;
+}
+
+.legend text {
+  font-size: 12px;
+}
+
+.tooltip {
+  position: absolute;
+  padding: 6px 10px;
+  background: rgba(50, 50, 50, 0.9);
+  color: white;
+  border-radius: 4px;
+  pointer-events: none;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+}
