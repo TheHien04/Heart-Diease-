@@ -1,0 +1,51 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+#cholesterol_bar {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.tooltip {
+  font-size: 14px;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.95);
+  color: #000;
+  padding: 8px 12px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+
+body.dark .tooltip {
+  background: rgba(40, 40, 40, 0.9);
+  color: #fff;
+}
+
+.axis-label {
+  font-size: 14px;
+  font-weight: bold;
+  text-anchor: middle;
+}
+
+.legend {
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
