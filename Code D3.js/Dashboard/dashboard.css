@@ -1,0 +1,397 @@
+/* -------- Base giữ nguyên -------- */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard-container {
+  position: relative;
+  width: 1520px;
+  height: 850px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.charts-container {
+  display: grid;
+  grid-template-columns: repeat(4, 430px);
+  grid-template-rows: repeat(2, 500px);
+  gap: 20px;
+  position: absolute;
+  top: 40px;
+  left: 0;
+}
+
+/* -------- Healthcare Make-up (màu pastel, bo tròn, bóng đổ) -------- */
+:root {
+  --card: #ffffff;
+  --border: #e9ecf5;
+  --text: #243047;
+  --muted: #8a90a6;
+  --lavender: #7c6bf2; /* tím nhẹ */
+  --aqua: #9dd9f3; /* xanh aqua */
+  --shadow: 0 10px 26px rgba(33, 35, 79, 0.08);
+  --shadow-hover: 0 14px 34px rgba(33, 35, 79, 0.12);
+  --blue: #85b6ff;
+  --red: #ffb2bd;
+}
+
+/* Card */
+.chart {
+  width: 430px;
+  height: 500px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-sizing: border-box;
+  overflow: visible;
+  position: relative;
+
+  /* nâng cấp UI */
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s;
+  padding-top: 6px; /* cho tiêu đề thoáng hơn */
+}
+.chart:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  border-color: color-mix(in oklab, var(--lavender) 22%, var(--border));
+}
+
+/* Title */
+.chart h3 {
+  text-align: center;
+  margin: 10px 12px 6px;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: 0.2px;
+  position: relative;
+}
+
+/* Accent line nhẹ dưới title (clinic vibe) */
+.chart h3::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  border-radius: 3px;
+  margin: 6px auto 0;
+  background: linear-gradient(90deg, var(--lavender), var(--aqua));
+  opacity: 0.35;
+}
+
+.chart svg {
+  display: block;
+}
+
+/* Nếu bạn có container phụ cho pie/grouped bar thì giữ nguyên */
+.chart .pie_chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chart .grouped_bar_chart-container {
+  display: block;
+}
+
+/* Filter (giữ nguyên vị trí), chỉ make-up */
+.filter-container {
+  position: absolute;
+  top: 80px;
+  left: 1720px;
+  width: 200px;
+
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 10px 12px;
+  box-shadow: var(--shadow);
+}
+.filter-container h1 {
+  font-size: 16px;
+  margin: 0 0 10px 0;
+  font-weight: 800;
+  color: var(--text);
+}
+.filter-group {
+  margin-bottom: 14px;
+}
+.filter-group label {
+  display: block;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--text);
+}
+.filter-group select {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--text);
+}
+
+/* Legend pill */
+.legend {
+  margin: 10px 12px 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.legend h2 {
+  display: none;
+} /* ẩn heading cho gọn như app */
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--text);
+  font-size: 13px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+}
+.legend-color {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  margin-right: 0;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+
+/* Tooltip (dùng chung cho D3/Chart.js external tooltip) */
+.tooltip,
+.chartjs-tooltip {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  background: #fff;
+  color: #111;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px 10px;
+  box-shadow: var(--shadow);
+  font-size: 12px;
+  transform: translate(12px, 12px);
+}
+
+/* -------- Dark mode (vẫn dùng body.dark như cũ) -------- */
+body.dark {
+  background-color: #2e2e2e;
+  color: #f0f0f0;
+}
+
+body.dark .chart {
+  background-color: #3a3a3a;
+  border: 1px solid #555;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+}
+body.dark .chart h3 {
+  color: #f5f5f5;
+}
+body.dark .chart h3::after {
+  background: linear-gradient(90deg, #b4a9ff, #8be3ff);
+  opacity: 0.35;
+}
+
+body.dark h1,
+body.dark h2 {
+  color: #f5f5f5;
+}
+body.dark .filter-container {
+  background: #3a3a3a;
+  border-color: #555;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+}
+body.dark .filter-group label {
+  color: #f0f0f0;
+}
+body.dark select {
+  background-color: #4a4a4a;
+  color: #fff;
+  border: 1px solid #777;
+}
+body.dark .legend-item {
+  color: #f0f0f0;
+  background: #3d3d3d;
+  border-color: #555;
+}
+body.dark .tooltip {
+  background-color: #444;
+  color: #fff;
+  border: 1px solid #666;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.12);
+}
+
+/* Nút toggle dạng pill cho đồng bộ UI */
+.pill-toggle {
+  border: 1px solid var(--border);
+  background: #ffffff;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+body.dark .pill-toggle {
+  background: #3a3a3a;
+  color: #fff;
+  border-color: #555;
+}
+
+/* Vertical label – fix typo 26pxpx -> 26px */
+.vertical-label {
+  position: fixed;
+  top: 50%;
+  left: 150px;
+  transform: rotate(-90deg) translateY(-50%);
+  transform-origin: left center;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 26px; /* fixed */
+  font-weight: 700;
+  color: #d14b8f;
+  z-index: 999;
+  white-space: nowrap;
+  opacity: 0.95;
+  letter-spacing: 1px;
+}
+
+/* ===== Infobar (sidebar giới thiệu & KPI) ===== */
+.infobar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 220px;
+  background: #ffffff;
+  border-right: 1px solid #e9ecf5;
+  box-shadow: 0 10px 26px rgba(33, 35, 79, 0.06);
+  padding: 16px 14px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.ib-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ib-logo {
+  font-size: 22px;
+  line-height: 1;
+}
+.ib-title {
+  font-weight: 800;
+  color: #243047;
+  line-height: 1.2;
+}
+.ib-desc {
+  margin: 6px 2px 10px;
+  color: #8a90a6;
+  font-size: 13px;
+}
+
+.ib-kpis {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.kpi {
+  background: #fff;
+  border: 1px solid #e9ecf5;
+  border-radius: 12px;
+  padding: 10px 12px;
+  box-shadow: 0 6px 18px rgba(33, 35, 79, 0.06);
+}
+.kpi-label {
+  font-size: 12px;
+  color: #8a90a6;
+}
+.kpi-value {
+  font-size: 18px;
+  font-weight: 800;
+  color: #243047;
+}
+
+.ib-footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ib-credit {
+  color: #8a90a6;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* chừa chỗ cho sidebar */
+.dashboard-container {
+  padding-left: 240px;
+}
+
+/* Nút toggle đã có style .pill-toggle của bạn, dùng lại */
+.pill-toggle {
+  border: 1px solid var(--border);
+  background: #ffffff;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  width: 100%;
+}
+
+/* ===== Dark mode (hỗ trợ cả html.dark & body.dark) ===== */
+html.dark body,
+body.dark {
+  background-color: #2e2e2e;
+  color: #f0f0f0;
+}
+html.dark .chart,
+body.dark .chart {
+  background-color: #3a3a3a;
+  border: 1px solid #555;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+}
+html.dark .chart h3,
+body.dark .chart h3 {
+  color: #f5f5f5;
+}
+html.dark .chart h3::after,
+body.dark .chart h3::after {
+  background: linear-gradient(90deg, #b4a9ff, #8be3ff);
+  opacity: 0.35;
+}
+
+html.dark .infobar,
+body.dark .infobar {
+  background: #2f2f34;
+  border-right: 1px solid #555;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+}
+html.dark .kpi,
+body.dark .kpi {
+  background: #3a3a3a;
+  border-color: #555;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+html.dark .kpi-label,
+body.dark .kpi-label {
+  color: #c9cbd5;
+}
+html.dark .kpi-value,
+body.dark .kpi-value {
+  color: #fff;
+}
+
+html.dark .pill-toggle,
+body.dark .pill-toggle {
+  background: #3a3a3a;
+  color: #fff;
+  border-color: #555;
+}
