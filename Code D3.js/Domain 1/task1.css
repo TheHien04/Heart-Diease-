@@ -1,0 +1,69 @@
+.title {
+  text-align: center;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.filter-container {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.bar_chart-container {
+  font-family: Arial, sans-serif;
+  display: block;
+  margin: 0 auto;
+}
+
+.bar {
+  stroke: black;
+  stroke-width: 1px;
+}
+
+.bar:hover {
+  opacity: 0.8;
+}
+
+.x-axis path,
+.y-axis path {
+  stroke: black;
+}
+
+.x-axis text,
+.y-axis text {
+  font-size: 12px;
+}
+
+.axis-label {
+  font-size: 16px;
+  font-weight: bold;
+  fill: black;
+}
+
+.x-label,
+.y-label {
+  text-anchor: middle;
+}
+
+.legend text {
+  font-size: 12px;
+}
+
+.tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 1000;
+}
+
+body.dark .tooltip {
+  background: #eee;
+  color: #111;
+}
