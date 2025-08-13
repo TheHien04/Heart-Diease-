@@ -1,0 +1,45 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff;
+  color: #333;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+.title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.filter {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ccc;
+  padding: 8px;
+  font-size: 13px;
+  color: #333;
+  pointer-events: none;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.2s;
+}
+
+svg {
+  display: block;
+  margin: auto;
+}
+
+.legend text {
+  font-size: 12px;
+}
+
+.legend-item {
+  cursor: default;
+}
