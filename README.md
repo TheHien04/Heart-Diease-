@@ -41,7 +41,7 @@ Our dataset contains **10 attributes**, categorized as follows:
 | **Lifestyle**      | Exercise Habits         | ![Exercise](Image/Exercise.jpg) |
 |                    | Smoking                 | ![Smoking](Image/Smoking%20World.png) |
 |                    | Alcohol Consumption     | ![Alcohol Consumption](Image/Alcohol%20Consumption.png) |
-| **Clinical**       | Cholesterol Level       | ![Cholesterol](Image/Cholesterol%20Level.png) |
+| **Clinical**       | Cholesterol Level       | ![Cholesterol Level](Image/Cholesterrol%20Level.png) |
 |                    | Blood Pressure          | ![Blood Pressure](Image/Blood%20Pressure.jpg) |
 |                    | BMI                      | ![BMI](Image/Body%20max%20index.png) |
 |                    | Family Heart Disease     | ![Family](Image/heart_family.jpg) |
