@@ -37,14 +37,14 @@ Our dataset contains **10 attributes**, categorized as follows:
 
 | Category           | Attribute               | Example Image |
 |--------------------|-------------------------|---------------|
-| **Demographics**   | Age, Gender              | — |
-| **Lifestyle**      | Exercise Habits          | — |
-|                    | Smoking                  | ![Smoking](Image/Smoking%20World.png) |
-|                    | Alcohol Consumption      | ![Alcohol Consumption](Image/Alcohol%20Consumption.png) |
-| **Clinical**       | Cholesterol Level        | ![Cholesterol](Image/Cholesterrol%20Level.png) |
-|                    | Blood Pressure           | ![Blood Pressure](Image/Blood%20Pressure.jpg) |
+| **Demographics**   | Age, Gender             | ![Gender](Image/Heart%20Gender.jpg) |
+| **Lifestyle**      | Exercise Habits         | ![Exercise](Image/Exercise.jpg) |
+|                    | Smoking                 | ![Smoking](Image/Smoking%20World.png) |
+|                    | Alcohol Consumption     | ![Alcohol Consumption](Image/Alcohol%20Consumption.png) |
+| **Clinical**       | Cholesterol Level       | ![Cholesterol](Image/Cholesterol%20Level.png) |
+|                    | Blood Pressure          | ![Blood Pressure](Image/Blood%20Pressure.jpg) |
 |                    | BMI                      | ![BMI](Image/Body%20max%20index.png) |
-|                    | Family Heart Disease     | — |
+|                    | Family Heart Disease     | ![Family](Image/heart_family.jpg) |
 |                    | Stress Level             | ![Stress](Image/Stress.jpg) |
 
 ---
@@ -53,7 +53,10 @@ Our dataset contains **10 attributes**, categorized as follows:
 
 ### **Domain 1 – Age vs Heart Disease**
 - **Goal:** Identify correlation between age groups and heart disease prevalence.
-- **Key Insight:** Prevalence increases significantly after age 50, reflecting biological aging and accumulated lifestyle/clinical risk.
+- **Key Insight:**  
+  Heart disease prevalence rises sharply after age 50, reflecting the cumulative effect of biological aging, lifestyle, and clinical risk factors.  
+  Younger groups (<40) show relatively low risk, but early lifestyle interventions here could reduce future disease burden.  
+  This aligns with clinical studies emphasizing **age as one of the strongest predictors** of cardiovascular disease.  
 - **Dashboard:**  
 ![Domain 1](Image/Domain%201.png)  
 
@@ -61,7 +64,10 @@ Our dataset contains **10 attributes**, categorized as follows:
 
 ### **Domain 2 – Gender vs Heart Disease**
 - **Goal:** Compare disease rates between male and female.
-- **Key Insight:** Males show slightly higher prevalence. This aligns with medical literature, where men often develop heart disease at earlier ages due to hormonal and lifestyle differences.
+- **Key Insight:**  
+  Males in the dataset show a consistently higher prevalence of heart disease compared to females.  
+  This aligns with medical evidence, where hormonal protection (e.g., estrogen) often delays onset in women until post-menopause.  
+  The insight emphasizes the need for **gender-specific screening and prevention strategies**.
 - **Dashboard:**  
 ![Domain 2](Image/Domain%202.png)  
 
@@ -69,7 +75,10 @@ Our dataset contains **10 attributes**, categorized as follows:
 
 ### **Domain 3 – Blood Pressure vs Heart Disease**
 - **Goal:** Assess how blood pressure impacts disease likelihood.
-- **Key Insight:** Hypertension (high BP) is strongly associated with higher heart disease incidence. Elevated BP damages arterial walls over time, increasing cardiac stress.
+- **Key Insight:**  
+  Patients with elevated or high blood pressure are significantly more likely to develop heart disease.  
+  Chronic hypertension contributes to arterial damage and cardiac hypertrophy, creating a pathway to failure if unmanaged.  
+  This finding highlights the importance of **regular BP monitoring** and **early treatment** in preve
 - **Dashboard:**  
 ![Domain 3](Image/Domain%203.png)  
 
@@ -77,7 +86,10 @@ Our dataset contains **10 attributes**, categorized as follows:
 
 ### **Domain 4 – Exercise Habits**
 - **Goal:** Analyze the protective effect of regular exercise.
-- **Key Insight:** Higher exercise frequency correlates with lower prevalence. Exercise improves circulation, lowers BP, and reduces cholesterol, mitigating disease risk.
+- **Key Insight:**  
+  Patients reporting frequent exercise show a markedly lower prevalence of heart disease.  
+  Physical activity improves vascular function, lowers LDL cholesterol, and reduces blood pressure.  
+  The insight reinforces the role of **lifestyle modification** as a cost-effective intervention compared to long-term clinical treatment.  
 - **Dashboard:**  
 ![Domain 4](Image/Domain%204.png)  
 
@@ -85,7 +97,10 @@ Our dataset contains **10 attributes**, categorized as follows:
 
 ### **Domain 5 – Average Cholesterol Level**
 - **Goal:** Compare cholesterol levels between healthy and diseased groups.
-- **Key Insight:** Patients with heart disease exhibit **higher average cholesterol**, confirming hyperlipidemia as a critical risk factor.
+- **Key Insight:**  
+  Diseased patients consistently show higher mean cholesterol levels.  
+  Elevated LDL cholesterol accelerates plaque formation, narrowing arteries and reducing blood flow.  
+  This validates cholesterol as a **critical biomarker for early screening** and an actionable target for dietary and pharmaceutical intervention.  
 - **Dashboard:**  
 ![Domain 5](Image/Domain%205.png)  
 
@@ -93,7 +108,10 @@ Our dataset contains **10 attributes**, categorized as follows:
 
 ### **Domain 6 – Smoking**
 - **Goal:** Evaluate smoking as a risk factor.
-- **Key Insight:** Smokers have a **notably higher risk**. Smoking accelerates atherosclerosis, lowers oxygen supply, and damages vessel lining.
+- **Key Insight:**  
+  Smokers have a substantially higher prevalence of heart disease compared to non-smokers.  
+  Smoking contributes to endothelial damage, increases clotting tendency, and reduces oxygen transport in blood.  
+  This demonstrates why smoking cessation programs are one of the **most effective public health policies** for cardiovascular prevention.  
 - **Dashboard:**  
 ![Domain 6](Image/Domain%206.png)  
 
@@ -101,7 +119,10 @@ Our dataset contains **10 attributes**, categorized as follows:
 
 ### **Domain 7 – Alcohol Consumption**
 - **Goal:** Assess the relationship between alcohol intake and disease.
-- **Key Insight:** Excessive alcohol correlates with increased prevalence. While moderate intake may be neutral, chronic consumption elevates BP and cholesterol.
+- **Key Insight:**  
+  Patients with high alcohol consumption show elevated prevalence of heart disease.  
+  While moderate intake may not pose significant risks, chronic heavy drinking raises blood pressure and triglycerides.  
+  This suggests the need for **context-aware recommendations**, distinguishing between safe levels and harmful patterns of consumption.  
 - **Dashboard:**  
 ![Domain 7](Image/Domain%207.png)  
 
@@ -109,13 +130,26 @@ Our dataset contains **10 attributes**, categorized as follows:
 
 ### **Domain 8 – Cholesterol Distribution by Gender**
 - **Goal:** Identify gender-based differences in cholesterol distribution.
-- **Key Insight:** Males show slightly higher cholesterol variation. This aligns with risk profiles where men are more prone to early onset cardiovascular issues.
+- **Key Insight:**  
+  Male patients generally exhibit higher cholesterol variability compared to females.  
+  This partially explains their earlier onset of cardiovascular disease, with women catching up after menopause.  
+  Insights here support **gender-sensitive public health messaging** and **differentiated treatment guidelines**.  
 - **Dashboard:**  
 ![Domain 8](Image/Domain%208.png)  
 
 ---
+## 6. Design Thinking Process
+![Design Thinking](Image/Design%20Thinking%20Process.png)  
 
-## 6. Overall Dashboard Overview
+This project applied the **Design Thinking methodology**, ensuring the dashboard is not just technically correct but also **human-centered**:  
+- **Empathize:** Identify the needs of patients, doctors, and policymakers.  
+- **Define:** Frame the core problem (e.g., which risk factors most affect heart disease).  
+- **Ideate:** Generate multiple visualization ideas for clarity.  
+- **Prototype:** Build D3.js dashboards with filtering and interactivity.  
+- **Test:** Validate insights with users and iterate.  
+
+---
+## 7. Overall Dashboard Overview
 ### Light Mode
 ![Light Mode Dashboard](Report/Dashboard%20overview%20light.png)
 
@@ -123,8 +157,71 @@ Our dataset contains **10 attributes**, categorized as follows:
 ![Dark Mode Dashboard](Report/Dashboard%20overview%20dark.png)
 
 ---
+## 7.1.🔎 Cross-Domain Summary Insights
 
-## 7. Conclusion & Recommendations
+Bringing together insights from all 8 domains, we can highlight several overarching themes:
+
+1. **Demographics as Baseline Risks**  
+   - Age remains the **strongest non-modifiable risk factor**, with prevalence rising sharply after 50.  
+   - Gender differences are evident, with men at higher risk earlier, though women catch up post-menopause.  
+
+2. **Lifestyle Habits Drive Prevention Potential**  
+   - Smoking and alcohol stand out as **high-impact behavioral risks**, strongly linked to higher disease rates.  
+   - Regular exercise demonstrates a **protective effect**, reducing disease prevalence significantly.  
+
+3. **Clinical Biomarkers as Early Warning Signals**  
+   - High blood pressure and cholesterol are consistently associated with increased disease likelihood.  
+   - These are **measurable, trackable, and modifiable** markers that can guide early interventions.  
+
+4. **Integrated Risk Profiles**  
+   - No single factor explains heart disease—**it’s the interaction of demographics, lifestyle, and clinical markers** that creates overall risk.  
+   - This validates the need for **holistic prevention strategies**, not isolated interventions.  
+
+📌 In short:  
+- **Demographics tell us *who* is most at risk.**  
+- **Lifestyle explains *why* risks develop.**  
+- **Clinical biomarkers show *how* risks manifest.**  
+
+Together, these insights demonstrate the value of a **multi-dimensional, data-driven dashboard** for informing both individual care and public health strategies.
+
+---
+
+## 7.2.✅ Data-Driven Recommendations
+
+Based on insights across all domains, we propose targeted recommendations to different stakeholders:
+
+### 👤 For Individuals
+- **Adopt Heart-Healthy Lifestyle**:  
+  - Quit smoking and reduce alcohol intake to cut major risk factors.  
+  - Engage in **150 minutes of moderate exercise per week** (WHO guideline).  
+- **Track Clinical Indicators**:  
+  - Regularly monitor **blood pressure, cholesterol, and BMI**.  
+  - Seek medical checkups earlier if family history of heart disease exists.  
+
+### 🩺 For Healthcare Professionals
+- **Risk Stratification**:  
+  - Use **age + BP + cholesterol + lifestyle factors** to identify high-risk patients.  
+  - Implement **preventive screenings** starting at age 40 (earlier for high-risk groups).  
+- **Patient Education**:  
+  - Provide data-driven feedback to patients using visuals (e.g., charts showing impact of smoking/exercise).  
+  - Encourage personalized lifestyle changes backed by measurable data.  
+
+### 🏛️ For Policymakers & Public Health
+- **Targeted Awareness Campaigns**:  
+  - Focus on **smoking cessation, exercise promotion, and dietary changes**.  
+  - Design campaigns specifically for **middle-aged and elderly populations**.  
+- **Preventive Healthcare Policies**:  
+  - Subsidize routine screenings for blood pressure and cholesterol.  
+  - Invest in **digital dashboards** like this project to track regional/national heart health trends.  
+
+---
+
+📊 These recommendations highlight how **data analytics bridges the gap between insights and action**.  
+By translating patterns into concrete strategies, we can shift healthcare from **reactive treatment → proactive prevention**.
+
+## 7.3 Conclusion & Recommendations
+![Healthy Actions](Image/HA-signs-symptoms-social1.png) 
+
 - **Lifestyle factors** (smoking, alcohol, inactivity) substantially elevate heart disease risk → target public health campaigns here.  
 - **Clinical markers** (blood pressure, cholesterol, BMI) remain critical for **early detection & monitoring**.  
 - **Demographic patterns** (age, gender) highlight vulnerable groups for screening and intervention.  
@@ -158,8 +255,6 @@ The project follows a structured pipeline that reflects a **real-world data anal
 6. **Deployment (Future Work)**  
    - Deploy as a **web-based decision-support tool** for patients and doctors.  
 
-📊 **Pipeline Overview**  
-![Pipeline](Image/Design%20Thinking%20Process.png)
 
 ## 9. Technology Stack
 - **Frontend:** HTML, CSS, JavaScript (D3.js)  
