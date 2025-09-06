@@ -11,7 +11,7 @@ This project develops an **interactive D3.js dashboard** analyzing 8 domains rel
 ---
 
 ## 2. Types of Heart Disease
-![Types of Heart Disease](Image/Type%20of%20Heart%20Disease.png)
+![Types of Heart Disease](Image/Type%20of%20Heart%20Diease.png)
 
 **Common types include:**
 - **Coronary Artery Disease (CAD)**
